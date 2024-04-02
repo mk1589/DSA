@@ -31,6 +31,8 @@
 // 1 <= nums.length <= 100
 // 1 <= nums[i] <= 100
 
+<!-------------aproch-1  ----------->
+
 
 class Solution {
 public:
@@ -56,5 +58,27 @@ public:
         }
         return count;
         
+    }
+};
+
+
+
+
+
+<!-------------aproch-2  ----------->
+
+
+class Solution {
+public:
+    int numIdenticalPairs(vector<int>& nums) {
+        int n = nums.size();
+
+        int count = 0;
+        int freq[101] = {0};
+        for(int i=0;i<n;i++){
+            count += freq[nums[i]];
+            freq[nums[i]] += 1;
+        }
+        return count;
     }
 };
